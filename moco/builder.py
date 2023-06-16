@@ -186,7 +186,7 @@ class MoCo(nn.Module):
         num_gpus = batch_size_all // batch_size_this
 
         # random shuffle index
-        idx_shuffle = torch.randperm(batch_size_all).cuda()
+        idx_shuffle = torch.randperm(batch_size_all).cuda()#0-batch_size_all的序列打乱然后返回
 
         # broadcast to all gpus
         if torch.distributed.is_initialized():
